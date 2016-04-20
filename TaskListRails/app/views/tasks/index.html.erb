@@ -1,0 +1,9 @@
+<h1 class="wave_one_header"> Here's the task list</h1>
+
+<section>
+<ul class="WHOOT">
+  <% @tasks.each do |task| %>
+    <li><%= link_to task.name, "/#{task.id}" %></li>
+  <%end%>
+</ul>
+</section>
