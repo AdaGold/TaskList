@@ -16,7 +16,7 @@
  html {
    font-size: 14px;
    height: 100%;
-   background: url(./images/pen-paper.jpg) no-repeat center center fixed;
+   background: image-url("pen-1215435_1280.jpg") no-repeat center center fixed;
    background-size: cover;
  }
 
@@ -149,19 +149,19 @@
    cursor: pointer;
  }
 
- .add_button {
-     background-color: #2073e2;
-     border: none;
-     color: white;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
-     margin: 4px 2px;
-     cursor: pointer;
-     float: right;
- }
+ // .button {
+ //     background-color: #2073e2;
+ //     border: none;
+ //     color: white;
+ //     padding: 15px 32px;
+ //     text-align: center;
+ //     text-decoration: none;
+ //     display: inline-block;
+ //     font-size: 16px;
+ //     margin: 4px 2px;
+ //     cursor: pointer;
+ //     float: right;
+ // }
 
  .add_task {
    text-align: center;
