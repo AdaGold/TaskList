@@ -95,8 +95,16 @@
    margin-top: 0.5rem;
    margin-bottom: 1rem;
    padding: 1rem;
+}
 
- }
+.WHOOT {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 34px;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
 
  h2 {
    text-align: center;
@@ -125,15 +133,6 @@
    font-size: 24px;
  }
 
- .WHOOT {
-   font-family: 'Reenie Beanie', cursive;
-   font-size: 34px;
-   text-align: center;
-   margin-top: 0.5rem;
-   margin-bottom: 1rem;
-   padding: 1rem;
- }
-
  .alert {
    background-color: #fff;
    border-radius: 8px;
@@ -149,19 +148,19 @@
    cursor: pointer;
  }
 
- // .button {
- //     background-color: #2073e2;
- //     border: none;
- //     color: white;
- //     padding: 15px 32px;
- //     text-align: center;
- //     text-decoration: none;
- //     display: inline-block;
- //     font-size: 16px;
- //     margin: 4px 2px;
- //     cursor: pointer;
- //     float: right;
- // }
+ .button {
+     background-color: #2073e2;
+     border: none;
+     color: white;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+     float: right;
+ }
 
  .add_task {
    text-align: center;
