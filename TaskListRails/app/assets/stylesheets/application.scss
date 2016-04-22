@@ -86,13 +86,15 @@
  }
 
  h1 {
+   font-family: 'Reenie Beanie', cursive;
    text-align: center;
    margin-top: 10%;
  }
 
  .wave_one_header {
+   font-family: 'Reenie Beanie', cursive;
    text-align: center;
-   margin-top: 0.5rem;
+   margin-top: -8.5rem;
    margin-bottom: 1rem;
    padding: 1rem;
 }
@@ -100,13 +102,14 @@
 .WHOOT {
   font-family: 'Reenie Beanie', cursive;
   font-size: 34px;
-  text-align: left;
+  text-align: center;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 1rem;
 }
 
  h2 {
+   font-family: 'Reenie Beanie', cursive;
    text-align: center;
  }
 
@@ -116,10 +119,10 @@
 
  button {
    background-color: #fff;
-   border-radius: 8px;
+   border-radius: 1px;
    border: none;
    color: green;
-   padding: 15px 32px;
+   padding: 2px 4px;
    text-align: center;
    text-decoration: none;
    display: inline-block;
@@ -149,16 +152,19 @@
  }
 
  .button {
-     background-color: #2073e2;
-     border: none;
-     color: white;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
-     margin: 4px 2px;
-     cursor: pointer;
+   font-family: 'Reenie Beanie', cursive;
+   background-color: #2073e2;
+   border: none;
+   border-radius: 1rem;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 2px 1px;
+   margin-right: 20px;
+   cursor: pointer;
      float: right;
  }
 

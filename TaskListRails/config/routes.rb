@@ -5,8 +5,13 @@ get '/' => 'tasks#index'
 get '/tasks/new' => 'tasks#new'
 post '/tasks' => 'tasks#create', as: 'tasks'
 delete '/tasks/:id' => 'tasks#delete'
-get 'tasks/:id' => 'tasks#show'
-# resources :tasks
+get 'tasks/:id' => 'tasks#show', as: 'task'
+
+get 'tasks/:id/edit' => 'tasks#edit', as: 'edit_task'
+
+patch 'tasks/:id' => 'tasks#update'
+
+#resources :tasks
 # get '/:name' => 'tasks#by_name'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

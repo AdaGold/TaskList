@@ -1,0 +1,19 @@
+<pre><% params %></pre>
+
+<%= form_for @task do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :description %>
+  <%= f.text_area :description %></p>
+
+  <p><%= f.label :completed_status %>
+  <%= f.text_field :completed_status %></p>
+
+  <% if completed_at.present? %>
+    <p><%= f.label :completed_at %>
+    <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, completed_at, nil %></p><%#checkbox parameters (5 total)%>
+
+  <% end %>
+  <%= f.submit %>
+<% end %>
