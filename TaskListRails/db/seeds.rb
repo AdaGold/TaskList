@@ -25,3 +25,7 @@ tasks = [
 tasks.each do |task|
   Task.create task
 end
+
+Person.create(name: "Suzanne")
+Person.create(name: "Sarah")
+Person.create(name: "Deirdre")

@@ -7,13 +7,14 @@
   <p><%= f.label :description %>
   <%= f.text_area :description %></p>
 
+  <%= f.label :Person %>
+  <%= f.select "person_id", options_from_collection_for_select( @all_people , "id", "name"), :include_blank => true %><br>
+
   <p><%= f.label :completed_status %>
   <%= f.text_field :completed_status %></p>
 
-  <% if completed_at.present? %>
-    <p><%= f.label :completed_at %>
-    <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, completed_at, nil %></p><%#checkbox parameters (5 total)%>
+  <p><%= f.label :completed_at %>
+  <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, @task.completed_at, nil %></p><%#checkbox parameters (5 total)%>
 
-  <% end %>
   <%= f.submit %>
 <% end %>

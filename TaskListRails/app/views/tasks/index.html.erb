@@ -12,6 +12,10 @@
       <p>  <%= image_tag ("dT6okxEbc.png"), size: "20"%>
       <% end %>
 
+      <% if task.person != nil%>
+        <%= task.person.name %>
+      <% end %>
+
       <%= link_to task.name, task_path(task.id) %>
 
       <%= link_to "DELETE", task_path(task.id), method: :delete, data:
