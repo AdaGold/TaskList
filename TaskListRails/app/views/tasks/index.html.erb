@@ -11,6 +11,7 @@
       <% if task.completed_at != nil %>
       <p>  <%= image_tag ("dT6okxEbc.png"), size: "20"%>
       <% end %>
+
       <%= link_to task.name, task_path(task.id) %>
 
       <%= link_to "DELETE", task_path(task.id), method: :delete, data:
