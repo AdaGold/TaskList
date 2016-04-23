@@ -2,7 +2,7 @@
   <ul>
     <%= link_to "Add a Task!", "/tasks/new" %>
     <%= link_to "tasks", "/" %>
-    <%= link_to "Peeps!", "/people/" %>
+    <%= link_to "Peeps!", "/people" %>
   </ul>
 </div>
 
@@ -17,7 +17,7 @@
         <% else %>
         <%= "#{Person.count_not_completed(person.id)} uncompleted tasks" %>
         <% end %>
-        <%= link_to "details", people_path(person.id) %>
+        <%= link_to "details", person_path(person.id) %>
     <% end %>
   </ul>
 </section>

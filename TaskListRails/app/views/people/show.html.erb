@@ -2,7 +2,7 @@
   <ul>
     <%= link_to "Add a Task!", "/tasks/new" %>
     <%= link_to "tasks", "/" %>
-    <%= link_to "Peeps!", "/people/" %>
+    <%= link_to "Peeps!", "/people" %>
   </ul>
 </div>
 
@@ -12,3 +12,5 @@
   <%= Person.count_completed(@person.id) %>
   <h2><em>Tasks uncompleted:</em><br>
   <%= Person.count_not_completed(@person.id) %>
+
+<%= link_to "more info", person_task_path %>

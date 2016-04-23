@@ -12,7 +12,7 @@ patch 'tasks/:id' => 'tasks#update'
 
 get '/people'=> 'people#index'
 get 'people/:id' => 'people#show', as: 'person'
-get '/people/:id/tasks' => 'people#tasks'
+get 'people/:id/tasks' => 'people#tasks', as: 'person_task'
 
 #resources :tasks
 # get '/:name' => 'tasks#by_name'

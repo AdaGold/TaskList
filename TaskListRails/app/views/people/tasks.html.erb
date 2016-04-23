@@ -1,0 +1,18 @@
+<div class="alert">
+  <ul>
+    <%= link_to "Add a Task!", "/tasks/new" %>
+    <%= link_to "tasks", "/" %>
+    <%= link_to "Peeps!", "/people" %>
+  </ul>
+</div>
+
+<h1 class="wave_one_header">People!!</h1>
+
+<section>
+<% @tasks.each do |task| %>
+  <% if !task.completed_at %>
+     <%= task.name %>
+     <%= link_to task.description, task_path(task.id) %>
+  <% end %>
+<% end %>
+</section>
