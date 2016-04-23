@@ -1,0 +1,13 @@
+<div class="alert">
+  <%= link_to "Add a Task!", "/tasks/new" %>
+</div>
+
+<h1 class="wave_one_header">People!!</h1>
+
+<section>
+  <ul class="WHOOT">
+    <% @all_people.each do |person| %>
+    <p><%= link_to person.name, people_path(person.id) %>></p>
+    <% end %>
+  </ul>
+</section>

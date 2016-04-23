@@ -1,0 +1,12 @@
+<h2><em>Name:</em><br>
+   <%= @person.name %></h2>
+<h2><em>Person:</em><br>
+  <% if @person.tasks != nil%>
+    <%= tasks %>
+  <% end %></h2>
+<h2><em>Status:</em><br>
+   <%= @person.completed_status %></h2>
+<h2><em>Completed at:</em><br>
+   <%= @person.completed_at %></h2>
+
+<h2><%= link_to 'home', root_path %><h2>
