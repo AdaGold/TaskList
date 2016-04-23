@@ -19,7 +19,6 @@ class TasksController < ApplicationController
       check_hash[:completed_at] = DateTime.now
     end
     @task = Task.new(check_hash)
-
     if(@task.save)
       redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
     else
@@ -34,22 +33,28 @@ class TasksController < ApplicationController
   end
 
   def update
-    check_hash = task_edit_params[:task]
-    if check_hash[:completed_at] == "on"
-      check_hash[:completed_at] = DateTime.now
-    end
     @task = Task.find(params[:id])
-    if @task.update(check_hash)
-      redirect_to '/' #redirect in case user tries to post another form - brings them to entered view
-    else
-      render :edit
-    end
+      if @task.update({:completed_at => nil}.merge(task_edit_params[:task]))
+        redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
+      else
+        render :edit
+      end
   end
 
   def delete
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to root_path
+  end
+
+  def task_complete
+    task = Task.find(params[:id])
+    if !task.completed
+      task.update(completed: true, completed_at: Time.now)
+    else
+      task.update(completed: false, completed_at: nil)
+    end
+    redirect_to "/"
   end
 
   private

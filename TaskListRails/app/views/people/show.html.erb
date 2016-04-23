@@ -1,12 +1,14 @@
+<div class="alert">
+  <ul>
+    <%= link_to "Add a Task!", "/tasks/new" %>
+    <%= link_to "tasks", "/" %>
+    <%= link_to "Peeps!", "/people/" %>
+  </ul>
+</div>
+
 <h2><em>Name:</em><br>
    <%= @person.name %></h2>
-<h2><em>Person:</em><br>
-  <% if @person.tasks != nil%>
-    <%= tasks %>
-  <% end %></h2>
-<h2><em>Status:</em><br>
-   <%= @person.completed_status %></h2>
-<h2><em>Completed at:</em><br>
-   <%= @person.completed_at %></h2>
-
-<h2><%= link_to 'home', root_path %><h2>
+<h2><em>Tasks completed:</em><br>
+  <%= @person.count_completed(person.id) %>
+  <h2><em>Tasks completed:</em><br>
+  <%= @person.count_not_completed(person.id) %>

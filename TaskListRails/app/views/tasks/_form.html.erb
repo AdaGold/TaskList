@@ -13,8 +13,10 @@
   <p><%= f.label :completed_status %>
   <%= f.text_field :completed_status %></p>
 
-  <p><%= f.label :completed_at %>
-  <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, @task.completed_at, nil %></p><%#checkbox parameters (5 total)%>
+  <% if :completed_at.present? %>
+    <p><%= f.label :completed_at %>
+      <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, :completed_at, nil %></p>
+  <% end %></p><%#checkbox parameters (5 total)%>
 
   <%= f.submit %>
 <% end %>

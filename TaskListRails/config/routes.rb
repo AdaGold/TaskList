@@ -9,8 +9,8 @@ get 'tasks/:id' => 'tasks#show', as: 'task'
 get 'tasks/:id/edit' => 'tasks#edit', as: 'edit_task'
 patch 'tasks/:id' => 'tasks#update'
 
-get '/people'=> 'people#index', as: 'people'
-get '/people/:id' => 'people#show'
+get '/people'=> 'people#index'
+get '/people/:id' => 'people#show', as: 'person'
 get '/people/:id/tasks' => 'people#tasks'
 
 #resources :tasks
