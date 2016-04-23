@@ -20,7 +20,6 @@ class TasksController < ApplicationController
     end
     @task = Task.new(check_hash)
 
-
     if(@task.save)
       redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
     else
@@ -41,7 +40,7 @@ class TasksController < ApplicationController
     end
     @task = Task.find(params[:id])
     if @task.update(check_hash)
-      redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
+      redirect_to '/' #redirect in case user tries to post another form - brings them to entered view
     else
       render :edit
     end
