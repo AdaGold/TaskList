@@ -11,7 +11,7 @@
 <section>
   <ul class="WHOOT">
     <% @all_people.each do |person| %>
-    <p><%= link_to person.name, people_path(person.id) %></p>
+    <p><%= link_to person.name, person_path(person.id) %></p>
         <% if Person.count_not_completed(person.id) == 1 %>
         <%= "#{Person.count_not_completed(person.id)} uncompleted task" %>
         <% else %>

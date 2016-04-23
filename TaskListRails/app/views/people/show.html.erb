@@ -9,6 +9,6 @@
 <h2><em>Name:</em><br>
    <%= @person.name %></h2>
 <h2><em>Tasks completed:</em><br>
-  <%= @person.count_completed(person.id) %>
-  <h2><em>Tasks completed:</em><br>
-  <%= @person.count_not_completed(person.id) %>
+  <%= Person.count_completed(@person.id) %>
+  <h2><em>Tasks uncompleted:</em><br>
+  <%= Person.count_not_completed(@person.id) %>
