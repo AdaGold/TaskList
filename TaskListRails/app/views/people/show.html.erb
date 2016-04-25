@@ -7,10 +7,10 @@
 </div>
 
 <h2><em>Name:</em><br>
-   <%= @person.name %></h2>
+  <%= @person.name %></h2>
 <h2><em>Tasks completed:</em><br>
-  <%= Person.count_completed(@person.id) %>
+  <%= Task.count_completed(@person.id) %></h2>
   <h2><em>Tasks uncompleted:</em><br>
-  <%= Person.count_not_completed(@person.id) %>
+  <%= Task.count_not_completed(@person.id) %><h2>
 
 <%= link_to "more info", person_task_path %>

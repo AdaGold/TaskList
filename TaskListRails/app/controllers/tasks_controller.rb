@@ -14,11 +14,11 @@ class TasksController < ApplicationController
   end
 
   def create #COMMON PATTERN FOR CREATE
-    check_hash = task_create_params[:task]
-    if check_hash[:completed_at] == "on"
-      check_hash[:completed_at] = DateTime.now
-    end
-    @task = Task.new(check_hash)
+    # check_hash = task_create_params[:task]
+    # if check_hash[:completed_at] != nil
+    #   check_hash[:completed_at] = DateTime.now
+    # end
+    @task = Task.new(task_create_params[:task])
     if(@task.save)
       redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
     else
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
         redirect_to task_path(@task.id)#redirect in case user tries to post another form - brings them to entered view
       else
         render :edit
-      end
+      end#redirect in case user tries to post another form - brings them to entered view
   end
 
   def delete
@@ -47,12 +47,12 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
-  def task_complete
+  def complete
     task = Task.find(params[:id])
     if !task.completed
-      task.update(completed: true, completed_at: Time.now)
+      task.update(completed_at: true, completed_at: DateTime.now)
     else
-      task.update(completed: false, completed_at: nil)
+      task.update(completed_at: false, completed_at: nil)
     end
     redirect_to "/"
   end

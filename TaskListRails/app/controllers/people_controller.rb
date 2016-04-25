@@ -6,6 +6,7 @@ class PeopleController < ApplicationController
 
   def show
     @person = Person.find(params[:id])
+    @tasks = @person.tasks
     render :show
   end
 

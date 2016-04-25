@@ -6,13 +6,20 @@
   </ul>
 </div>
 
-<h1 class="wave_one_header">People!!</h1>
+<h1 class="wave_one_header"><%= "#{@person.name}" %> 's Tasks!</h1>
 
-<section>
-<% @tasks.each do |task| %>
-  <% if !task.completed_at %>
-     <%= task.name %>
-     <%= link_to task.description, task_path(task.id) %>
-  <% end %>
-<% end %>
-</section>
+  <h2>Completed tasks:</h2>
+      <% @tasks.each do |task| %>
+        <% if task.completed_at.present? %>
+        <ul>
+        <h2><%= task.name %>: <%= link_to task.description, task_path(task.id) %></h2>
+        <% end %>
+        </ul>
+      <% end %>
+
+  <h2>Uncompleted tasks:</h2>
+    <% @tasks.each do |task| %>
+      <% if !task.completed_at %>
+      <h2><%= task.name %>: <%= link_to task.description, task_path(task.id) %></h2>
+      <% end %>
+    <% end %>

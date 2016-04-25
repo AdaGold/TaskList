@@ -1,10 +1,10 @@
 <div class="alert">
-  <ul>
-    <%= link_to "Add a Task!", "/tasks/new" %>
-    <%= link_to "tasks", "/" %>
-    <%= link_to "Peeps!", "/people" %>
-  </ul>
+    <h2><%= link_to "Add a Task!", "tasks/new" %></h2><br>
+    <h2><%= link_to "Tasks", "/" %></h2><br>
+    <h2><%= link_to "Peeps!", "/people" %></h2><br>
 </div>
 
+<section>
 <h1 class="wave_one_header">Let's make a new task!</h1>
 <%= render partial: "form" %>
+</section>

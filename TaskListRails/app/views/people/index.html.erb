@@ -8,16 +8,14 @@
 
 <h1 class="wave_one_header">People!!</h1>
 
-<section>
   <ul class="WHOOT">
     <% @all_people.each do |person| %>
     <p><%= link_to person.name, person_path(person.id) %></p>
-        <% if Person.count_not_completed(person.id) == 1 %>
-        <%= "#{Person.count_not_completed(person.id)} uncompleted task" %>
+        <% if Task.count_not_completed(person.id) == 1 %>
+        <%= "#{Task.count_not_completed(person.id)} uncompleted task" %>
         <% else %>
-        <%= "#{Person.count_not_completed(person.id)} uncompleted tasks" %>
+        <%= "#{Task.count_not_completed(person.id)} uncompleted tasks" %>
         <% end %>
         <%= link_to "details", person_path(person.id) %>
     <% end %>
   </ul>
-</section>
