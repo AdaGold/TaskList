@@ -1,10 +1,12 @@
 <div class="alert">
-    <h2><%= link_to "Add a Task!", "tasks/new" %></h2><br>
-    <h2><%= link_to "Tasks", "/" %></h2><br>
-    <h2><%= link_to "Peeps!", "/people" %></h2><br>
+  <ul>
+    <%= link_to "Add a Task!", "/tasks/new" %>
+    <%= link_to "tasks", "/" %>
+    <%= link_to "Peeps!", "/people" %>
+  </ul>
 </div>
 
 <section>
-<h1 class="wave_one_header">Let's make a new task!</h1>
-<%= render partial: "form" %>
+<h1 class="add_task_head">Let's make a new task!</h1>
+<%= render partial: "form", locals: { completed_at: nil } %>
 </section>
