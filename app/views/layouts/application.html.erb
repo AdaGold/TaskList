@@ -7,9 +7,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+  <div class="alert">
+    <ul>
+      <li><%= link_to "Add a Task!", "/tasks/new" %></li>
+      <li><%= link_to "Tasks", "/" %></li>
+      <li><%= link_to "Peeps!", "/people" %></li>
+    </ul>
+  </div>
+  <div class="content">
+  <%= yield %>
+  </div>
 
 </body>
 </html>

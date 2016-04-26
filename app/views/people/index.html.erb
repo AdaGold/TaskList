@@ -1,21 +1,13 @@
-<div class="alert">
-  <ul>
-    <%= link_to "Add a Task!", "/tasks/new" %>
-    <%= link_to "tasks", "/" %>
-    <%= link_to "Peeps!", "/people" %>
-  </ul>
-</div>
-
 <h1 class="wave_one_header">People!!</h1>
 
   <ul class="WHOOT">
     <% @all_people.each do |person| %>
-    <p><%= link_to person.name, person_path(person.id) %></p>
+      <li><%= link_to person.name, person_path(person.id) %><br>
         <% if Task.count_not_completed(person.id) == 1 %>
         <%= "#{Task.count_not_completed(person.id)} uncompleted task" %>
         <% else %>
         <%= "#{Task.count_not_completed(person.id)} uncompleted tasks" %>
-        <% end %>
-        <%= link_to "details", person_path(person.id) %>
+        <% end %><br>
+        <%= link_to "details", person_path(person.id) %></li>
     <% end %>
   </ul>
