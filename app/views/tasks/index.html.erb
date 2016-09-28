@@ -1,0 +1,6 @@
+<h1>Get yo SH*T done!</h1>
+<% @tasks.each do |task| %>
+  <article>
+    <h2><%= link_to( task[:thing], show_path(task[:id])) %></h2>
+  </article>
+<% end %>
