@@ -1,1 +1,7 @@
 <h1>DO YOUR CHORES</h1>
+<% @tasks.each do |t| %>
+  <p>
+    <%= "#{t.name}" %>
+    <%= link_to "Details", task_path(t) %>
+  </p>
+<% end %>
