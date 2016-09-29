@@ -1,2 +1,14 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>Make a new task!</h1>
+
+<form name="new-task" action="create" method="post">
+
+  <label for="task_name">Task:</label>
+  <input type="text" name="task_name" id="task_name">
+
+  <label for="description">Description:</label>
+  <input type="text" name="description" id="description">
+
+  <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %>
+  <button type="submit">Submit</button>
+
+</form>

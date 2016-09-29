@@ -1,37 +1,35 @@
 class TasksController < ApplicationController
   def index
-    @tasks = TasksController.alltasks
+    @tasks = Task.all
   end
 
   def new
+    @mytask = Task.new
   end
 
   def show
-    @tasks = TasksController.alltasks
-    @mytask = nil
-
-    @tasks.each do |task|
-      number = params[:id].to_i
-      if task[:id] == number
-        @mytask = task
-      end
-    end
-
-    if @mytask == nil
-      @mytask = {id: params[:id].to_i, thing: "Did not find", description: "", completion_status: "unknown", completeion_date: "N/A" }
-    end
+    @mytask = Task.find(params[:id].to_i)
   end
 
   def delete
+    @mytask = Task.destroy(params[:id].to_i)
   end
 
   def edit
+    show
   end
 
   def update
   end
 
   def create
+    @params = params
+    @mytask = Task.new
+    @mytask.task_name = params[:task_name]
+    @mytask.description = params[:description]
+    @mytask.completion_status = "incomplete"
+    # @mytask.completeion_date = Time.new
+    @mytask.save
   end
 
   def self.alltasks
@@ -43,6 +41,11 @@ class TasksController < ApplicationController
       {id: 3, thing: "Dance", description: "OOh, la la la, la la, la la la", completion_status: "incomplete", completeion_date: "N/A"}
 
     ]
+  end
+
+  private
+  def user_params
+    params.require(:task).permit(:task_name, :description, :completion_status, :completeion_date)
   end
 
 end

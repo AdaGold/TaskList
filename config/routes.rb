@@ -10,7 +10,7 @@ root to: 'tasks#index'
 
   delete 'tasks/:id/delete' => 'tasks#delete', as: 'delete'
 
-  get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
+  get 'tasks/edit' => 'tasks#edit', as: 'edit'
 
   put 'tasks/:id/update' => 'tasks#update', as: 'update'
 

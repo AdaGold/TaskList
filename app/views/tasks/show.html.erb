@@ -1,7 +1,11 @@
 <article>
-    <h1><%= @mytask[:thing] %></h1>
+    <h1><%= @mytask[:task_name] %></h1>
     <p><%= @mytask[:description] %></p>
     <p><%= @mytask[:completion_status] %></p>
     <p><%= @mytask[:completeion_date] %></p>
+
+    <p> <%= button_to 'delete task', {action: "delete", id: @mytask.id },
+          method: :delete, data: {confirm: "Are you sure you want to delete this task?"}  %> </p>
     <p><%= link_to( 'View All Tasks', index_path ) %></p>
+
 </article>
