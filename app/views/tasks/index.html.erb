@@ -2,8 +2,10 @@
 <% @tasks.each do |t| %>
   <p>
     <%= "#{t.name}" %>
+    <%= link_to "click if complete", task_path(t), method: :patch %>
     <%= link_to "Details", task_path(t) %>
     <%= link_to "Edit", task_edit_path(t) %>
+    <%= link_to "Destroy", task_path(t), method: :delete, data: {confirm: "Are you sure you want to delete that task? Did you even do it?"} %>
   </p>
 <% end %>
 

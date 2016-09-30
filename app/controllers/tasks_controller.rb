@@ -34,6 +34,17 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task = Task.find(params[:id]).destroy
+    redirect_to tasks_path
+  end
+
+  def record_completion
+    @task = Task.find(params[:id][:completion]).Datetime.now
+    @task.patch
+    redirect_to tasks_path
+  end
+
   private
 
   def task_params
