@@ -3,5 +3,8 @@
   <p>
     <%= "#{t.name}" %>
     <%= link_to "Details", task_path(t) %>
+    <%= link_to "Edit", task_edit_path(t) %>
   </p>
 <% end %>
+
+  <%= link_to "Create New Task", tasks_new_path %>
