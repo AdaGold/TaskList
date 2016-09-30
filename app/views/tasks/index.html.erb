@@ -1,2 +1,16 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Your To Do List... </h1>
+
+<article>
+
+  <ol>
+    <% @tasks.each do |task| %>
+    <li>
+      <p>
+        <%= link_to( task.title , show_path(task.id)) %>
+        <%= button_to("Delete", {action: "destroy", id: task[:id]}, method: :delete, data: { confirm: "Are you sure you want to delete this task from your to-do list???" }) %>
+      </p>
+    </li>
+    <% end %>
+  </ol>
+
+</article>

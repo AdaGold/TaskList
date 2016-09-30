@@ -1,2 +1,17 @@
 <h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
+
+<form action="show" method="post" accept-charset="utf-8">
+  <label for="shift"> Letter of offset: </label>
+  <input type="text" name="shift" id="shift">
+    <!-- name is the key in your params hash -->
+  <label for="message"> Your Message: </label>
+  <input type="text" name="message" id="message">
+
+  <input type="submit" value="Decode!">
+  <!-- Could also use: <button type="submit"> Encode! </button> -->
+
+</form>
+
+
+
+<!-- This is for create when I make it...  -->

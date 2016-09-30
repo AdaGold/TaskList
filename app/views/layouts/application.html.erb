@@ -6,9 +6,30 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+<body>
+  <header>
+    <h1 id=siteName>Task Tracker</h1>
+    <nav>
+      <ul>
+        <li> <%= link_to("Home", index_path) %> </li>
+        <li> <%= link_to("New Task", new_path) %> </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li> <%= link_to("Home", index_path) %> </li>
+      </ul>
+    </nav>
+  </footer>
+
 
 </body>
 </html>

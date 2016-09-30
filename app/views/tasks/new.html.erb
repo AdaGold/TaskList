@@ -1,2 +1,16 @@
-<h1>Tasks#new</h1>
-<p>Find me in app/views/tasks/new.html.erb</p>
+<h1>Create A New Task</h1>
+
+<article>
+
+<%= form_for @newtask, url: create_path do |f| %>
+  <%= f.label :title %> <!-- title is the name of the instance varaible to name this with -->
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
+<% end %>
+
+
+</article>
