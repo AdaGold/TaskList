@@ -2,17 +2,18 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    #consider adding @tasks = Task.where(done:false)
+    #consider adding @tasks_done = Task.where(done:true)
   end
 
   #opens new form for user submits to create
   def new
-    
     @task = Task.new
-
   end
 
   def create
-    self.new
+    @task = Task.new
+
     @params = params #parameters submitted from form (a hash) which is automated by rails
     @task.title = params[:title]
     @task.description = params[:description]
@@ -25,7 +26,7 @@ class TasksController < ApplicationController
   #opens new form for user submits to update
 
   def edit  
-    self.show
+    @task = Task.new.find(params[:id].to_i)
   end
 
   def update
@@ -39,8 +40,8 @@ class TasksController < ApplicationController
   end
 
   def delete
-    num = params[:id].to_i
-    Post.find(num).destroy
+    @task =Task.find(params[:id])
+    @task.destroy
   end
 
   def show

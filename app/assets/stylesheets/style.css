@@ -1,7 +1,7 @@
 html {
   width: 100%;
   background-color: lightblue;
-  font-family: "Dosis", "Helvetica", "Times New Roman"
+  font-family: "Helvetica", "Times New Roman"
 }
 body {
   width: 100%;
@@ -17,9 +17,10 @@ nav {
   text-decoration: none;
 }
 
-ul {
+ul li a {
   text-decoration: none;
 }
+
 
 button {
   margin: 5px;
