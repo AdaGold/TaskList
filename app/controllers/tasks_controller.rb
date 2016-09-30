@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   def index
     @tasks = Task.all
+    # @tasks.each do |task|
+    #   task.completed = task.completed_at != nil
+    #   task.save
+    # end
   end
 
   def show
@@ -31,9 +35,27 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
+    @task.toggle!(:completed)
 
-    @task.update_attribute(@task.completed_at, Time.now)
+    if @task.completed
+      @task.completed_at = Time.now
+    else
+      @task.completed_at = nil
+    end
+
+    @task.save
+
+    redirect_to(:back)
+
   end
+
+  # This was for toggle... revisit later
+    # def toggle_approve
+    #   @a = Tasks.find(params[:id])
+    #   @a.toggle!(:completed)
+    #   render :nothing => true
+    # end
 
   def destroy
     @task = Task.find(params[:id])

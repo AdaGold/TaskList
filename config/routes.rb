@@ -14,9 +14,14 @@ Rails.application.routes.draw do
 
   get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
-  get 'tasks/update'
+  patch 'tasks/:id/update'=> 'tasks#update', as: 'update'
 
   delete 'tasks/:id/destroy' => "tasks#destroy", as: "destroy"
+
+  # This was for toggle... revisit later
+  # resources :tasks do
+  #   get 'toggle_approve', :on => :member
+  # end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

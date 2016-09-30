@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
 
   def complete_time
-    complete = completed_at ? "Completed at: #{completed_at.to_s}" : "Incomplete..."
+    complete = completed_at ? "Completed at: #{completed_at.to_s}" : "Currently Incomplete..."
     return complete
   end
 
@@ -10,8 +10,9 @@ class Task < ActiveRecord::Base
     return complete
   end
 
-  def test_check
-    
+  def complete_question
+    completed ? 'Mark Incomplete...' : 'Mark Complete!'
   end
+
 
 end

@@ -4,9 +4,16 @@
 
   <ol>
     <% @tasks.each do |task| %>
+    <% @task = task %>  <%# I know this is silly, but I need it as a class variable for my checkbox %>
     <li>
       <p>
         <%= link_to( task.title , show_path(task.id)) %>
+
+        <!-- This will accurately display the current completion status! for @task.complete?-->
+        <%=  check_box("task", "complete?", { class: 'Task' }, true, false)%>
+        <%= "Complete?" %>
+        <%=  button_to("#{@task.complete_question} ", update_path(@task), method: "patch") %>
+
         <%= button_to("Delete", {action: "destroy", id: task[:id]}, method: :delete, data: { confirm: "Are you sure you want to delete this task from your to-do list???" }) %>
       </p>
     </li>

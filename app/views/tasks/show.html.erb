@@ -10,23 +10,22 @@
   </p>
 
   <h2> Status: </h2>
+
   <!-- Display when the current task was completed-->
   <p>
-    <%= @task.complete_time %>
     <!-- This will accurately display the current completion status! for @task.complete?-->
     <%=  check_box("task", "complete?", { class: 'Task' }, true, false)%>
-    <%= "   #{@task.completed}" %>
-
-
-
-
-    <%=  check_box_tag(:complete)%>
-    <%= label_tag(@task.complete?, "Done") %>
-    <% if @task[:complete] %>
-    <% "Test sdfjkjfslkajfkld" %>
-    <% end %>
-
+    <%= @task.complete_time %>
+    <%=  button_to("#{@task.complete_question} ", update_path(@task), method: "patch") %>
   </p>
+
+  <p>
+    <!-- This was for toggle... revisit later -->
+    <%# link_to approve_link_text(@task),
+            toggle_approve_task_path(@task),
+            :remote => true %>
+  </p>
+
 
   <h2> Options: </h2>
     <p>
@@ -40,6 +39,5 @@
 
     </p>
 
-    <%= params %>
 
 </article>
