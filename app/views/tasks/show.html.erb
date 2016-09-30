@@ -16,7 +16,7 @@
     <!-- This will accurately display the current completion status! for @task.complete?-->
     <%=  check_box("task", "complete?", { class: 'Task' }, true, false)%>
     <%= @task.complete_time %>
-    <%=  button_to("#{@task.complete_question} ", update_path(@task), method: "patch") %>
+    <%=  button_to("#{@task.complete_question} ", button_path(@task), method: "patch") %>
   </p>
 
   <p>
@@ -24,6 +24,7 @@
     <%# link_to approve_link_text(@task),
             toggle_approve_task_path(@task),
             :remote => true %>
+            <%= params %>
   </p>
 
 

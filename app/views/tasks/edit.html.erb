@@ -1,16 +1,15 @@
-<h1>Tasks#edit</h1>
+<h1>Update your Task</h1>
 
-<form action="show" method="post" accept-charset="utf-8">
-  <label for="shift"> Letter of offset: </label>
-  <input type="text" name="shift" id="shift">
-    <!-- name is the key in your params hash -->
-  <label for="message"> Your Message: </label>
-  <input type="text" name="message" id="message">
+<%= form_for @task, method: :put, url: update_path do |f| %>
+  <%= f.label :title %> <!-- title is the name of the instance varaible to name this with -->
+  <%= f.text_field :title %>
 
-  <input type="submit" value="Decode!">
-  <!-- Could also use: <button type="submit"> Encode! </button> -->
+  <%= f.label :description %>
+  <%= f.text_field :description %>
 
-</form>
+  <%= f.submit %>
+<% end %>
+
 
 
 

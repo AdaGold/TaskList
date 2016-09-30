@@ -32,9 +32,22 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
+
+    @task.title = params[:task][:title]
+    @task.description= params[:task][:description]
+
+    @task.save
+
+    redirect_to action: "show"
+
+  end
+
+  def button
     @task = Task.find(params[:id])
     @task.toggle!(:completed)
 
@@ -49,6 +62,7 @@ class TasksController < ApplicationController
     redirect_to(:back)
 
   end
+
 
   # This was for toggle... revisit later
     # def toggle_approve
