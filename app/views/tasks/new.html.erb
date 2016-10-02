@@ -1,7 +1,7 @@
 <h1>Create a new task!</h1>
 
 
-<%= form_for Task.new, as: :post, url: create_path do |f| %> 
+<%= form_for Task.new, as: :task, url: create_path do |f| %> 
   <%= f.label :title %>
   <%= f.text_field :title %>
 
