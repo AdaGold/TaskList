@@ -43,9 +43,17 @@ class TasksController < ApplicationController
   #     @task.created_at = params[:created_at]
   #     @task.updated_at = params[:updated_at]
   # end
+  def completed_at
+    
+    @task = Task.find(params[:id])
+    @task.completed_at = DateTime.now
+    @task.save
+
+    redirect_to root_path
+  end
 
   def destroy
-    @task =Task.find(params[:id])
+    @task = Task.find(params[:id])
     @task.destroy
 
     redirect_to root_path
