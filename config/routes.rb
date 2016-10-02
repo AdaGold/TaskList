@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
   get 'tasks/new' => 'tasks#new', as: 'new'
 
-  # get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
+  get 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
+
+  put 'tasks/:id/update' => 'tasks#update', as: 'update'
 
   patch 'tasks/:id/completed_at' => 'tasks#completed_at', as: 'completed_at'
   

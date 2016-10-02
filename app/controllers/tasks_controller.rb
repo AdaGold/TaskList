@@ -30,21 +30,24 @@ class TasksController < ApplicationController
   
   # #opens new form for user submits to update
 
-  # def edit  
-  #   @task = Task.new.find(params[:id].to_i)
-  # end
+  def edit 
 
-  # def update
+    @task = Task.find(params[:id])
 
-  #   self.show
-  #     @task.title = params[:title]
-  #     @task.description = params[:description]
-  #     @task.completed_at = params[:completed_at]
-  #     @task.created_at = params[:created_at]
-  #     @task.updated_at = params[:updated_at]
-  # end
+  end
+
+  def update
+
+    # self.show
+    #   @task.title = params[:title]
+    #   @task.description = params[:description]
+    #   @task.completed_at = params[:completed_at]
+    #   @task.created_at = params[:created_at]
+    #   @task.updated_at = params[:updated_at]
+  end
+  
   def completed_at
-    
+
     @task = Task.find(params[:id])
     @task.completed_at = DateTime.now
     @task.save
@@ -60,6 +63,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id].to_i)
+    @task = Task.find(params[:id])
   end
 end
