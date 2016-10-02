@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   
     @task.save
 
-    redirect_to action: "index"
+    redirect_to root_path
   end
   
   # #opens new form for user submits to update
@@ -44,10 +44,12 @@ class TasksController < ApplicationController
   #     @task.updated_at = params[:updated_at]
   # end
 
-  # def delete
-  #   @task =Task.find(params[:id])
-  #   @task.destroy
-  # end
+  def destroy
+    @task =Task.find(params[:id])
+    @task.destroy
+
+    redirect_to root_path
+  end
 
   def show
     @task = Task.find(params[:id].to_i)
