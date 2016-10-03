@@ -41,7 +41,7 @@ class TasksController < ApplicationController
 
   def record_completion
     @task = Task.find(params[:id][:completion]).Datetime.now
-    @task.patch
+    @task.update(task_params[:id][:completion])
     redirect_to tasks_path
   end
 
