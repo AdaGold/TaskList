@@ -1,3 +1,13 @@
+##### REFLECTION #####
+
+After completing this project I feel far more comfortable with how each piece of rails works together. I felt comfortable navigating between the views, route, controller, etc. 
+
+One aspect I did not get to function properly that I did want to function properly was a redirection to the index page. As it stands now, whenever a task is updated or marked complete/incomplete, it redirects to the home page. I would like it to stay on the task page for these commands and not redirect. I did work on this for a while and think I found some useful documentation, but could not seem to get it to work the way I wanted it to. With more dedicated time I think I could make it work.
+
+After the project satisfied the basic requirements, I tried to go back and add in some CSS, but I found it difficult to style the buttons and other aspects that were written in embedded ruby. I do have style sheet, but I am not fond of it, so I commented it out. My seat partner did a really great job of styling her buttons and other embedded ruby, it seems I will have to wrap my code/use classes to better advantage.
+
+-----------------------------------------------------------
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
@@ -50,7 +60,7 @@ In this wave we will add the first set of user interactivity and persistence.
     1. Ask the user to confirm that they definitely want to delete the task.
     1. Delete the task from the database and redirect the user back to the list of remaining tasks
 
-<!-- ## 🌊 Wave 3
+ 🌊 Wave 3
 In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow _RESTful_ conventions when implementing these features.
 
 - Add the ability for the user to mark a task complete
@@ -64,4 +74,6 @@ In this wave we will extend the interactivity with users, allowing them to edit 
   - DRY up your code by reusing the view code from the `new` functionality
     - Hint: Rendering _partials_ in Rails.
 
- -->
+ 
+ 
+ 
