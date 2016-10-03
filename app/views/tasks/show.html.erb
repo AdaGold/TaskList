@@ -1,8 +1,16 @@
 <article>
-    <h1><%= @mytask[:task_name] %></h1>
-    <p><%= @mytask[:description] %></p>
-    <p><%= @mytask[:completion_status] %></p>
-    <p><%= @mytask[:completeion_date] %></p>
+    <h2><%= @mytask[:task_name] %></h2>
+    <p>Description: <%= @mytask[:description] %></p>
+    <p>Status: <%= @mytask[:completion_status] %></p>
+    <p>Completion Date: <%= @mytask[:completion_date] %></p>
+
+    <% if @mytask.completion_status == 'incomplete' %>
+      <p> <%= button_to 'mark as complete', {action: "mark_complete", id: @mytask.id },
+            method: :mark_complete %> </p>
+    <% else %>
+    <p> <%= button_to 'mark as incomplete', {action: "mark_incomplete", id: @mytask.id },
+          method: :mark_incomplete %> </p>
+    <% end %>
 
     <p> <%= button_to 'delete task', {action: "delete", id: @mytask.id },
           method: :delete, data: {confirm: "Are you sure you want to delete this task?"}  %> </p>

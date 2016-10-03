@@ -10,9 +10,13 @@ root to: 'tasks#index'
 
   delete 'tasks/:id/delete' => 'tasks#delete', as: 'delete'
 
-  get 'tasks/edit' => 'tasks#edit', as: 'edit'
+  post 'tasks/:id/edit' => 'tasks#edit', as: 'edit'
 
   put 'tasks/:id/update' => 'tasks#update', as: 'update'
+
+  post 'tasks/:id/mark_complete' => 'tasks#mark_complete'
+
+  post 'tasks/:id/mark_incomplete' => 'tasks#mark_incomplete'
 
   post 'tasks/create' => 'tasks#create', as: 'create'
 

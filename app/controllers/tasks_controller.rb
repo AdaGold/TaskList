@@ -13,6 +13,8 @@ class TasksController < ApplicationController
 
   def delete
     @mytask = Task.destroy(params[:id].to_i)
+
+    redirect_to action: "index"
   end
 
   def edit
@@ -20,6 +22,13 @@ class TasksController < ApplicationController
   end
 
   def update
+    @mytask = Task.find(params[:id].to_i)
+    @params = params
+    @mytask.task_name = params[:task_name]
+    @mytask.description = params[:description]
+    @mytask.save
+
+    redirect_to action: "index"
   end
 
   def create
@@ -28,19 +37,29 @@ class TasksController < ApplicationController
     @mytask.task_name = params[:task_name]
     @mytask.description = params[:description]
     @mytask.completion_status = "incomplete"
-    # @mytask.completeion_date = Time.new
+    @mytask.completion_date = "Not completed yet!"
     @mytask.save
+
+    redirect_to action: "index"
   end
 
-  def self.alltasks
-    [
-      {id: 1, thing: "Make Soup", description: "Put veggies in water...boil", completion_status: "incomplete", completeion_date: "N/A"},
+  def mark_complete
+    @mytask = Task.find(params[:id].to_i)
+    @mytask.completion_status = "complete"
+    @mytask.completion_date = DateTime.now
+    @mytask.save
 
-      {id: 2, thing: "Bake a party cake", description: "You know the drill", completion_status: "incomplete", completeion_date: "N/A"},
+# <li><%= link_to_unless_current("About Us", { action: "about" }) %></li>
+    redirect_to action: "index"
+  end
 
-      {id: 3, thing: "Dance", description: "OOh, la la la, la la, la la la", completion_status: "incomplete", completeion_date: "N/A"}
+  def mark_incomplete
+    @mytask = Task.find(params[:id].to_i)
+    @mytask.completion_status = "incomplete"
+    @mytask.completion_date = "Not completed yet!"
+    @mytask.save
 
-    ]
+    redirect_to action: "index"
   end
 
   private
