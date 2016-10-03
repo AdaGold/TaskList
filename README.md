@@ -1,11 +1,11 @@
-## Reflection
-### What went well: 
+### Reflection
+#### What went well: 
   Creating all the pages and forms was pretty straighforward. I definitely feel more comfortable with routing (but not completely).
 
-### What I'm still working on understanding better: 
+#### What I'm still working on understanding better: 
   I tried for a long time to have the checkbox control an attribute, but I only managed to get it to display an attribute.
 
-### What did chair pair do differently:
+#### What did chair pair do differently:
   Both of my chair-pairs did more formatting than I did on the display of the list, buttons, etc. I need to be better about doing that, I tend to stop once it's functional.
 
 # Task List Rails ✅
