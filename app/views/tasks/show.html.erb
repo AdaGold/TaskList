@@ -1,0 +1,10 @@
+<h1>Your Current Tasks</h1>
+<p>
+  <%= @task.title %><br> 
+  <%= @task.description %><br>  
+  <%= @task.completed_at %><br>
+  <%= @task.created_at %><br> 
+  <%= @task.updated_at %><br>
+  <%= link_to "Edit Task", edit_path(@task) %>
+</p>
+

@@ -1,0 +1,30 @@
+html {
+  width: 100%;
+  background-color: lightblue;
+  font-family: "Helvetica", "Times New Roman"
+
+}
+
+
+nav {
+  display: inline;
+  clear: right;
+  width: 100%;
+  margin: 20px 0;
+
+ 
+}
+
+ul li {
+  display: inline;
+  list-style-type: none;
+}
+
+
+a { 
+  padding-right:5px;
+  text-decoration: none;
+  color: #000;
+}
+
+
