@@ -1,6 +1,6 @@
 ### Reflection
 #### What went well: 
-  Creating all the pages and forms was pretty straighforward. I definitely feel more comfortable with routing (but not completely).
+  Creating all the pages and forms was pretty straighforward. I definitely feel more comfortable with routing (but not completely). Having the buttons update the attributes took me a while to figure out, but made sence in the end.
 
 #### What I'm still working on understanding better: 
   I tried for a long time to have the checkbox control an attribute, but I only managed to get it to display an attribute.
