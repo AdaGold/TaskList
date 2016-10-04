@@ -1,15 +1,7 @@
 <h1>Update your Task</h1>
 
-<%= form_for @task, method: :put, url: update_path do |f| %>
-  <%= f.label :title %> <!-- title is the name of the instance varaible to name this with -->
-  <%= f.text_field :title %>
 
-  <%= f.label :description %>
-  <%= f.text_field :description %>
-
-  <%= f.submit %>
-<% end %>
-
+<%= render partial: "form", locals: {action_name: "update"} %>
 
 
 

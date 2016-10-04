@@ -15,8 +15,9 @@ class TasksController < ApplicationController
   end
 
   def new
-    @newtask = Task.new
-
+    @task = Task.new
+    # @path = "create"
+    @method = :get
   end
 
   def create
@@ -33,6 +34,8 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    # @path = "update"
+    @method = :put
   end
 
   def update
