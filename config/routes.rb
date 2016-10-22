@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   root 'tasks#index'
 
-  get '/auth/:provider/callback' => 'sessions#create'
+  get '/auth/:provider/callback', to: 'sessions#create'
   get '/sessions/login_failure', to: 'sessions#login_failure', as: 'login_failure'
 
   get '/sessions', to: 'sessions#index', as: 'sessions'
 
-  delete '/sessions', to: 'sessions#destroy'
+  delete '/sessions', to: 'sessions#destroy', as: "sessions_delete"
 
   get 'tasks' => 'tasks#index'
   get 'tasks/new' => 'tasks#new'

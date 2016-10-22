@@ -26,4 +26,9 @@ class SessionsController < ApplicationController
 
   def login_failure
   end
+
+  def destroy
+    @user = User.find(session[:user_id]).destroy
+    redirect_to root_path
+  end
 end
