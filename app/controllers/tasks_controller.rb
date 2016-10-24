@@ -52,10 +52,10 @@ class TasksController < ApplicationController
   end
 
   def find_tasks
-      begin
-        @tasks = @current_user.tasks.find(params[:id])
-      rescue ActiveRecord::RecordNotFound
-        render file: "public/404", status: :not_found
-      end
+    begin
+      @tasks = @current_user.tasks.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      render file: "public/404", status: :not_found
+    end
   end
 end
