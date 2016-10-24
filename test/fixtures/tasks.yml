@@ -1,13 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  task_name: MyString
-  description: MyText
-  completion_status: MyString
-  completion_date: MyString
+adas_task:
+  task_name: "write first code!"
+  description: "Fortran"
+  user: :ada
+  completion_status: complete
+  completion_date: 2016-09-15
 
-two:
-  task_name: MyString
-  description: MyText
-  completion_status: MyString
-  completion_date: MyString
+babbages_task:
+  task_name: "make first computer"
+  description: "build it!"
+  user: :babbage
+  completion_status: Incomplete
