@@ -1,4 +1,10 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:login, :create]
+
+  def login
+    #goes to static login page
+  end
+
   def create
     auth_hash = request.env['omniauth.auth']
     redirect_to login_failure_path unless auth_hash['uid']
@@ -11,17 +17,7 @@ class SessionsController < ApplicationController
       render :creation_failure unless @user.save
     end
     session[:user_id] = @user.id
-    redirect_to sessions_path
-  end
-
-  def index
-    if session[:user_id].nil?
-      redirect_to login_failure_path
-
-    return
-    else
-      @user = User.find(session[:user_id])
-    end
+    redirect_to tasks_path
   end
 
   def login_failure
