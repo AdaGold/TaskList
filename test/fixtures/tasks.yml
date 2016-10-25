@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+grace_task1:
+  user: grace
+  name: walk dog
+  description: walk Ada's dog
+  completion:
+
+grace_task2:
+  user: grace
+  name: debug
+  description: kill all the bugs
+  completion:
+
+ada_task1:
+  user: ada
+  name: write first program
+  description: write world's first program
+  completion:
+
+ada_task2:
+  user: ada
+  name: wash dishes
+  description: still gotta wash dishes
+  completion:
