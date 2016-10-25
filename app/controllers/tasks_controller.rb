@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_tasks, only: [:show, :edit, :update, :destroy]
+  before_action :find_task, only: [:show, :edit, :update, :record_completion, :destroy]
 
   def index
     @tasks = @current_user.tasks
@@ -26,9 +26,8 @@ class TasksController < ApplicationController
   end
 
   def update #like create, but for editing
-    @task.assign_attributes(task_params)
-    if @task.save
-      redirect_to tasks_path(@task)
+    if @task.update(task_params)
+      redirect_to tasks_path
     else
       render :edit
     end
@@ -40,8 +39,8 @@ class TasksController < ApplicationController
   end
 
   def record_completion
-    @task = Task.find(params[:id][:completion]).Datetime.now
-    @task.update(task_params[:id][:completion])
+    @task.completion = Datetime.now
+    @task.save
     redirect_to tasks_path
   end
 
@@ -51,9 +50,9 @@ class TasksController < ApplicationController
     params.require(:task).permit(:name, :description, :completion)
   end
 
-  def find_tasks
+  def find_task
     begin
-      @tasks = @current_user.tasks.find(params[:id])
+      @task = @current_user.tasks.find(params[:id])
     rescue ActiveRecord::RecordNotFound
       render file: "public/404", status: :not_found
     end
