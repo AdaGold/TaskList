@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   root to: 'tasks#index'
 
   get 'tasks/index' => 'tasks#index', as: 'index'
@@ -19,6 +23,10 @@ Rails.application.routes.draw do
   patch 'tasks/:id/button'=> 'tasks#button', as: 'button'
 
   delete 'tasks/:id/destroy' => "tasks#destroy", as: "destroy"
+
+
+  get "/auth/:provider/callback" =>  "sessions#create"
+
 
   # This was for toggle... revisit later
   # resources :tasks do
