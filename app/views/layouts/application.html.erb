@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TaskListRails</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <header>
+    <h1 id=siteName>Task Tracker</h1>
+    <nav>
+      <ul>
+        <li> <%= link_to("Home", root_path) %> </li>
+        <% if session[:user_id] == nil %>
+          <li> <%= link_to("Login via Github", "/auth/github") %> </li> <%# i.e. "/auth/:provider" %>
+        <% else %>
+          <li> <%= link_to("New Task", new_path) %> </li>
+          <li> <%= link_to("Logout", "/sessions/destroy", method: "delete") %> </li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li> <%= link_to("Home", root_path) %> </li>
+      </ul>
+    </nav>
+  </footer>
+
+
+</body>
+</html>

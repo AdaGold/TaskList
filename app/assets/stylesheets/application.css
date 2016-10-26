@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ /* Semantic Tags */
+ header {
+   background-color: rgb(205, 170, 46);
+   position: fixed;
+   width: 100%;
+   height: 47px;
+   top: 0;
+ }
+
+ body {
+   font-family: garamond;
+ }
+
+ main {
+   background-color: rgb(218, 218, 218);
+   /*margin-top: 47px;
+   margin-bottom: 47px;*/
+   padding: 47px 5vw 50px 5vw;
+   height: 100vh;
+   box-sizing: border-box;  /*So 100vh includes the padding!!! (i.e. no scroll for no reason)*/
+   overflow: scroll;  /*So it will make the main area scrollable if too small!!*/
+ }
+
+ article {
+   padding: 0 0 0 2vw;
+   font-size: 1.2em;
+ }
+
+ nav {
+   background-color: black;
+   display: inline-block;
+   width: auto;
+   height: 100%;
+   position: absolute;
+   right: 0;
+ }
+
+ footer {
+   background-color: rgb(205, 170, 46);
+   display: inline-block;
+   width: 100%;
+   height: 47px;
+   /*position: relative;
+   bottom: 0;*/
+   position: fixed; /* fixed makes a sticky footer, relative puts it at the bottom*/
+   bottom: 0vh;
+   overflow: scroll;
+ }
+
+
+ h1 {
+   font-size: 2em;
+   line-height: 2;
+   text-shadow: 1px 1px 7px #717171;
+ }
+
+ h2 {
+   font-size: 1.5em;
+   line-height: 2;
+ }
+
+ ol {
+   list-style-type:upper-roman;
+   line-height: 1.5;
+   padding: 0 0 0 2vw;
+
+ }
+
+ p {
+   text-indent: 10px;
+ }
+
+
+
+ /* ---- Header specific / Horizontal navigation bar ---- */
+ #siteName {
+   font-size: 3em;
+   line-height: 1;
+   font-variant-caps: all-small-caps;
+   padding-left: 2vw;
+   display: inline-block;
+ }
+
+ header ul, header ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     /*height: 100%;*/
+ }
+
+ header li, footer li {
+     float: right;
+ }
+
+ header li a, footer li a {
+     display: block;
+     padding: 15px;
+     text-align: center;
+     color: white;
+     text-decoration: none;
+ }
+
+ /* Change the link color to #111 (black) on hover */
+ header li a:hover,  footer li a:hover {
+     background-color: rgb(91, 91, 91);
+ }
+ /* ---- Horizontal navigation bar ---- */
