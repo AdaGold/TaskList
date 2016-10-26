@@ -7,7 +7,7 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, {id: tasks(:adas_task).id}
     assert_response :success
   end
 
@@ -17,18 +17,20 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, {id: tasks(:adas_task).id}
     assert_response :success
   end
 
   test "should get update" do
-    get :update
-    assert_response :success
+    post_params = {id: tasks(:adas_task).id, task: {title: "Testing"}}  # "making a local variabel to control the parameters"
+    put :update, post_params
+    # put :update, {id: tasks(:adas_task).id}
+    assert_response :redirect
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    delete :destroy, {id: tasks(:adas_task).id}
+    assert_response :redirect
   end
 
   ########## Added new below ###########

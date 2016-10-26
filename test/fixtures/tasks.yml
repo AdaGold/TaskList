@@ -3,10 +3,10 @@
 adas_task:
   title: "Write the 1st code!"
   description: "Fortran"
-  user: :ada
+  # user: :ada
   completed_at: 2016-09-28 14:52:31
 
 babbages_task:
   title: "Make the first computer"
   description: "Build it"
-  user: :babbage
+  # user: :babbage

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  root to: 'homepages#index'
+
   get 'homepages/index'
 
   get 'sessions/create'
 
-  get 'sessions/destroy'
-
-  root to: 'tasks#index'
+  delete 'sessions/destroy' => 'sessions#destroy', as: 'destroy_session'
 
   get 'tasks/index' => 'tasks#index', as: 'index'
 
