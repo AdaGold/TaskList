@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    # @tasks = Task.all
+    @tasks = Task.where(user_id: session[:user_id])
     # @tasks.each do |task|
     #   task.completed = task.completed_at != nil
     #   task.save
@@ -8,14 +9,14 @@ class TasksController < ApplicationController
   end
 
   def show
-    # if session[:user_id] != nil
-    #   redirect_to index_path
-    # end
-
     tasks = Task.all
     # Get the current task
     @task = tasks.find(params[:id])
 
+    # If the current user isn't the owner fo this task redirect to the homepage
+    if session[:user_id] != @task.user_id
+      redirect_to root_path
+    end
   end
 
   def new
@@ -29,6 +30,7 @@ class TasksController < ApplicationController
     @task = Task.new
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
+    @task.user_id = session[:user_id]
     # @newtask.complete = false
     @task.save
 
@@ -38,12 +40,23 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+
+    # If the current user isn't the owner fo this task redirect to the homepage
+    if session[:user_id] != @task.user_id
+      redirect_to root_path
+    end
+
     # @path = "update"
     @method = :put
   end
 
   def update
     @task = Task.find(params[:id])
+
+    # If the current user isn't the owner fo this task redirect to the homepage
+    if session[:user_id] != @task.user_id
+      redirect_to root_path
+    end
 
     @task.title = params[:task][:title]
     @task.description= params[:task][:description]
