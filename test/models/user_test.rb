@@ -21,15 +21,14 @@ class UserTest < ActiveSupport::TestCase
     assert user.valid?
   end
 
-  # test "Returns the correct number of albums for an artist" do
-  #   assert_equal artists(:bonjovi).albums.length,  2
-  #   assert_not_equal artists(:beyonce).albums.length,  1 # because there are actually 0
-  # end
+  test "Returns the correct number of tasks for a user" do
+    assert_equal users(:ada).tasks.length,  1
+    assert_not_equal users(:babbage).tasks.length,  2 # because there is actually 1
+  end
 
-  # test "An artist contains the correct albums" do
-  #   assert_includes artists(:bonjovi).albums,  albums(:slippery_when_wet)
-  #   assert_not_includes artists(:bonjovi).albums,  albums(:the_getaway)
-  #
-  # end
+  test "An user contains the correct tasks" do
+    assert_includes users(:ada).tasks,  tasks(:adas_task)
+    assert_not_includes users(:babbage).tasks,  tasks(:adas_task)
+  end
 
 end

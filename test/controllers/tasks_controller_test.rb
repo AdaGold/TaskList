@@ -7,6 +7,7 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
+    session[:user_id] = users(:ada).id
     get :show, {id: tasks(:adas_task).id}
     assert_response :success
   end
@@ -17,6 +18,7 @@ class TasksControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
+    session[:user_id] = users(:ada).id
     get :edit, {id: tasks(:adas_task).id}
     assert_response :success
   end
@@ -47,7 +49,7 @@ class TasksControllerTest < ActionController::TestCase
     get :show, id: tasks(:adas_task).id
 
     assert_response :redirect
-    assert_equal flash[:notice], "You do not have access to that task"
+    assert_equal flash[:notice], "Sorry, you do not have access to that task."
   end
 
 end

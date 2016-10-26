@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update, :button, :destroy]  # Before going to the show, edit, or update page --> this will run find_student
+
   def index
     # @tasks = Task.all
     @tasks = Task.where(user_id: session[:user_id])
@@ -9,14 +11,14 @@ class TasksController < ApplicationController
   end
 
   def show
-    tasks = Task.all
+
     # Get the current task
-    @task = tasks.find(params[:id])
+    # @task = tasks.find(params[:id])
 
     # If the current user isn't the owner fo this task redirect to the homepage
-    if session[:user_id] != @task.user_id
-      redirect_to root_path
-    end
+    # if session[:user_id] != @task.user_id
+    #   redirect_to root_path
+    # end
   end
 
   def new
@@ -39,7 +41,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
 
     # If the current user isn't the owner fo this task redirect to the homepage
     if session[:user_id] != @task.user_id
@@ -51,8 +53,7 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
-
+    # @task = Task.find(params[:id])
     # If the current user isn't the owner fo this task redirect to the homepage
     if session[:user_id] != @task.user_id
       redirect_to root_path
@@ -60,15 +61,12 @@ class TasksController < ApplicationController
 
     @task.title = params[:task][:title]
     @task.description= params[:task][:description]
-
     @task.save
-
     redirect_to action: "show"
-
   end
 
   def button
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
     @task.toggle!(:completed)
 
     if @task.completed
@@ -76,13 +74,10 @@ class TasksController < ApplicationController
     else
       @task.completed_at = nil
     end
-
     @task.save
 
     redirect_to(:back)
-
   end
-
 
   # This was for toggle... revisit later
     # def toggle_approve
@@ -92,10 +87,25 @@ class TasksController < ApplicationController
     # end
 
   def destroy
-    @task = Task.find(params[:id])
+    # @task = Task.find(params[:id])
     @task.destroy
     redirect_to action: "index"
   end
 
+  private
+
+  def find_task
+    if Task.exists?(params[:id])
+      @task = Task.find(params[:id])
+      #Redirect if this task does not belong to this user
+      if session[:user_id] != @task.user_id
+        redirect_to root_path
+        flash[:notice] = "Sorry, you do not have access to that task."
+      end
+    elsif @task == nil
+      redirect_to root_path
+      flash[:notice] = "Sorry, that task does not exist."
+    end
+  end
 
 end
