@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'homepages/index'
+
   get 'sessions/create'
 
   get 'sessions/destroy'
