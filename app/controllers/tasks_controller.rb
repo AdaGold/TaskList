@@ -1,12 +1,13 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:show, :edit, :update, :button, :destroy]  # Before going to the show, edit, or update page --> this will run find_student
+  before_action :redirect_guest, only: [:index, :new, :create]
 
   def index
     # @tasks = Task.all
     @tasks = Task.where(user_id: session[:user_id])
-    # @tasks.each do |task|
-    #   task.completed = task.completed_at != nil
-    #   task.save
+
+    # if session[:user_id] == nil
+    #   redirect_to root_path
     # end
   end
 
@@ -105,6 +106,12 @@ class TasksController < ApplicationController
     elsif @task == nil
       redirect_to root_path
       flash[:notice] = "Sorry, that task does not exist."
+    end
+  end
+
+  def redirect_guest
+    if session[:user_id] == nil
+      redirect_to root_path
     end
   end
 
