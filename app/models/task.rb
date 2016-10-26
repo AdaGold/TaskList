@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  belongs_to :user
+  validates :user_id, presence: true
 
   def complete_time
     complete = completed_at ? "Completed at: #{completed_at.to_s}" : "Currently Incomplete..."
