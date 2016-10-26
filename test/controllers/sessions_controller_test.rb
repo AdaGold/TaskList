@@ -2,13 +2,16 @@ require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
   test "should get create" do
-    get :create
-    assert_response :success
+    request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
+    post :create
+    assert_not_equal session[:user_id], nil
+    assert_response :redirect
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    delete :destroy
+    assert_equal session[:user_id], nil
+    assert_response :redirect
   end
 
   ################ ADDED ##################
@@ -26,7 +29,7 @@ class SessionsControllerTest < ActionController::TestCase
       login_a_user
       assert_response :redirect
       assert_redirected_to root_path
-      assert_equal session[:user_id] = User.find_by(uid: OmniAuth.config_mock_provider: "githib").id
+      # assert_equal session[:user_id] = User.find_by(uid: OmniAuth.config_mock_provider(:github)).id
 
     end
   end

@@ -8,6 +8,10 @@ class TasksController < ApplicationController
   end
 
   def show
+    # if session[:user_id] != nil
+    #   redirect_to index_path
+    # end
+
     tasks = Task.all
     # Get the current task
     @task = tasks.find(params[:id])
