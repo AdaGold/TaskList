@@ -1,5 +1,9 @@
 class TasksController < ApplicationController
   def index
+    if @mytask.user_id != session[:user_id]
+      flash[:notice] = "You cannot view a task list that is not your own."
+      redirect_to homepage_path
+    end
     @tasks = Task.where(user_id: session[:user_id])
     @user = User.find(session[:user_id])
   end
@@ -10,6 +14,10 @@ class TasksController < ApplicationController
 
   def show
     @mytask = Task.find(params[:id].to_i)
+    if @mytask.user_id != session[:user_id]
+      flash[:notice] = "You cannot view or edit tasks that are not your own."
+      redirect_to homepage_path
+    end
   end
 
   def delete
@@ -33,6 +41,10 @@ class TasksController < ApplicationController
   end
 
   def create
+    if session[:user_id] = nil
+      flash[:notice] = "You must be logged in to create a task."
+      redirect_to homepage_path
+    end
     @params = params
     @mytask = Task.new
     @mytask.task_name = params[:task][:task_name]

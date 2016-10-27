@@ -28,7 +28,7 @@ root to: 'homepages#index'
 
   get "/auth/:provider/callback" =>  "sessions#create"
 
-  get 'homepages/index'
+  get 'homepages/index', as: 'homepage'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
