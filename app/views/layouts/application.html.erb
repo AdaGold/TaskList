@@ -9,6 +9,13 @@
 <body>
   <header>
       <h1>Task List</h1>
+      <% if session[:user_id] == nil %>
+        <p><%= link_to "log in via github", "/auth/github" %></p>
+      <% else %>
+        <p><%= link_to "logout", sessions_destroy_path,:method => :delete %></p>
+                      <!--if you do "sessions/destroy" here you will get a routing error in any page other than the homepage-->
+        <p><%= link_to "View my Tasks", index_path %></p>
+  <% end %>
   </header>
 
 <%= yield %>

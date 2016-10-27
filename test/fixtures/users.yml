@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+ada:
+  id: 1
+  uid: 11234
+  name: "Helena Helga"
+  provider: github
+  email: "hh@self.com"
+  created_at: 2016-08-13 14:15:56
+
+babbage:
+  id: 2
+  uid: 12344
+  name: "Gerdy Lurdy"
+  provider: github
+  email: "gl@self.com"
+  created_at: 2016-08-13 14:15:56
