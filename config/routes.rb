@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'sessions/create'
-
-root to: 'tasks#index'
+root to: 'homepages#index'
 
   get 'tasks/index' => 'tasks#index', as: 'index'
 
@@ -24,7 +22,13 @@ root to: 'tasks#index'
 
   # get 'sessions/create'
 
+  get 'sessions/create'
+
+  delete 'sessions/destroy'
+
   get "/auth/:provider/callback" =>  "sessions#create"
+
+  get 'homepages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

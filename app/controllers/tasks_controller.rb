@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: session[:user_id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -24,8 +25,8 @@ class TasksController < ApplicationController
   def update
     @mytask = Task.find(params[:id].to_i)
     @params = params
-    @mytask.task_name = params[:task_name]
-    @mytask.description = params[:description]
+    @mytask.task_name = params[:task][:task_name]
+    @mytask.description = params[:task][:description]
     @mytask.save
 
     redirect_to action: "index"
@@ -34,10 +35,11 @@ class TasksController < ApplicationController
   def create
     @params = params
     @mytask = Task.new
-    @mytask.task_name = params[:task_name]
-    @mytask.description = params[:description]
+    @mytask.task_name = params[:task][:task_name]
+    @mytask.description = params[:task][:description]
     @mytask.completion_status = "incomplete"
     @mytask.completion_date = "Not completed yet!"
+    @mytask.user_id = session[:user_id]
     @mytask.save
 
     redirect_to action: "index"
