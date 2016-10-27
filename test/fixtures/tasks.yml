@@ -3,12 +3,10 @@
 adas_task:
   task_name: "write first code!"
   description: "Fortran"
-  user: :ada
   completion_status: complete
   completion_date: 2016-09-15
 
 babbages_task:
   task_name: "make first computer"
   description: "build it!"
-  user: :babbage
   completion_status: Incomplete
