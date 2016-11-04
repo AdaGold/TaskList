@@ -1,0 +1,14 @@
+<section>
+  <%= form_for @mytask, url: action_name do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :details %>
+    <%= f.text_area :details %>
+
+    <%= f.submit action_name %>
+    <% end %>
+</section>

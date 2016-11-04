@@ -1,0 +1,29 @@
+
+<body>
+<header>
+  <div class="row column box" >
+
+    <div class="row">
+      <div class="small-12 small-center column">
+        <h1>Adulting</h1>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="small-12 small-center column" >
+
+        <% if session[:user_id] == nil %>
+          <%= link_to "Log in", "/auth/github" %></li>
+          <% else %>
+          <%= link_to "Logout", session_delete_path(session[:user_id]), method: :delete, data: {confirm: "End your session?"} %>
+        <% end %>
+
+      </div>
+    </div>
+
+  </div>
+</header>
+<div>
+
+</div>
+</body>

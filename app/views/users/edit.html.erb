@@ -1,0 +1,27 @@
+<div>
+  <header>
+    <% if current_user %>
+      <%= "Edit #{@user.profile_name}:" %>
+    <% else %>
+      <h1>Sign-up to start Adulting</h1>
+    <% end %>
+  </header>
+</div>
+
+<div>
+  <article>
+    <%= form_for @user, url: users_update_path do |f| %>
+
+      <%= f.label "Profile Name" %>
+      <%= f.text_field :profile_name %>
+
+      <%= f.label "Email" %>
+      <%= f.email_field :email  %>
+
+      <%= f.label "Name" %>
+      <%= f.text_field :name %>
+
+      <%= f.submit "Save" %>
+    <% end %>
+  </article>
+</div>
