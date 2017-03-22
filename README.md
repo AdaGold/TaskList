@@ -28,7 +28,7 @@ This wave is where we introduce ActiveRecord to create a model. We use the model
 1. update the controller's `index` action you created to retrieve and show `all` Task objects from the database
     - you may need to update the view as well to use the model fields rather than the hard-coded data
 
-<!--
+
 ## Wave 2
 In this wave, we will expand the actions we support and introduce forms for user interactivity and persistence.
 
@@ -41,7 +41,7 @@ In this wave, we will expand the actions we support and introduce forms for user
     - update the task list to have a link to add a new task
       - this will give the user a new page with a **form** with the appropriate task fields
       - the site should take the user back to the task list after the new task is added
--->
+
 
 <!--
 ## Wave 3
