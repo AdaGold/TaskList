@@ -42,8 +42,6 @@ In this wave, we will expand the actions we support and introduce forms for user
       - this will give the user a new page with a **form** with the appropriate task fields
       - the site should take the user back to the task list after the new task is added
 
-
-<!--
 ## Wave 3
 In this wave we will extend the interactivity with users, allowing them to edit existing tasks.
 
@@ -51,6 +49,7 @@ In this wave we will extend the interactivity with users, allowing them to edit 
     - update each task's show page to include an edit link
       - this will give the user a new page with a **form** that is pre-populated with the data about that task
       - the site should take the user back to the task's show page after the task is updated
+<!--
 
 1. **Optional**
   - DRY up your code by reusing the view code from the `new` functionality
