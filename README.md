@@ -49,14 +49,9 @@ In this wave we will extend the interactivity with users, allowing them to edit 
     - update each task's show page to include an edit link
       - this will give the user a new page with a **form** that is pre-populated with the data about that task
       - the site should take the user back to the task's show page after the task is updated
-<!--
 
-1. **Optional**
-  - DRY up your code by reusing the view code from the `new` functionality
-    - Hint: Rendering _partials_ in Rails
--->
 
-<!--
+
 ## Wave 4
 In this wave, we will add the ability to delete tasks. We will also add the ability for a user to mark a task complete.
 
@@ -67,4 +62,7 @@ In this wave, we will add the ability to delete tasks. We will also add the abil
 1. Mark a task complete
     - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete
     - Update the database with the task's completed date
--->
+1. **Optional**
+  - DRY up your code by reusing the view code from the `new` functionality
+    - Hint: Rendering _partials_ in Rails
+
