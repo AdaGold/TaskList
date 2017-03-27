@@ -1,0 +1,21 @@
+<pre><% params %></pre>
+
+<%= form_for @task do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+
+  <p><%= f.label :description %>
+  <%= f.text_area :description %></p>
+
+  <%= f.label :Person %>
+  <%= f.select "person_id", options_from_collection_for_select( @all_people , "id", "name", @task.person_id), :include_blank => true %><br>
+
+  <p><%= f.label :completed_status %>
+  <%= f.text_field :completed_status %></p>
+
+  <% if completed_at.present? %>
+    <%= f.label :completed_at %>
+    <%= f.check_box :completed_at, {:checked => @task.completed_at.present?}, completed_at, nil %></p>
+  <% end %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,8 @@
+<h2><em>Name:</em><br>
+  <%= @person.name %></h2>
+<h2><em>Tasks completed:</em><br>
+  <%= Task.count_completed(@person.id) %></h2>
+  <h2><em>Tasks uncompleted:</em><br>
+  <%= Task.count_not_completed(@person.id) %><h2>
+
+<%= link_to "more info", person_task_path %>

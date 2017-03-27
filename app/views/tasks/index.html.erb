@@ -1,0 +1,23 @@
+<h1 class="wave_one_header">My Task List</h1>
+
+<section>
+  <ul class="WHOOT">
+    <% @tasks.each do |task| %>
+      <% if task.completed_at != nil %>
+      <p><%= image_tag ("dT6okxEbc.png"), size: "20"%>
+      <% end %>
+
+      <% if task.person != nil%>
+        <%= task.person.name %>
+      <% end %>
+
+      <%= link_to task.name, task_path(task.id) %>
+
+      <%= link_to "DELETE", task_path(task.id), method: :delete, data:
+      { confirm: "Are you sure you want to delete this task?"}, class: :button%>
+
+      <%= link_to "UPDATE", edit_task_path(task.id), class: :button%></p>
+
+    <%end%>
+  </ul>
+</section>

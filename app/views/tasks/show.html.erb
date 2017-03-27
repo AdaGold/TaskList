@@ -1,0 +1,16 @@
+<h1 class="wave_one_header">Task Details</h1>
+
+<h2><em>Name:</em><br>
+   <%= @task.name %></h2>
+<h2><em>Description:</em><br>
+   <%= @task.description %></h2>
+<h2><em>Person:</em><br>
+  <% if @task.person != nil%>
+    <%= @task.person.name %>
+  <% end %></h2>
+<h2><em>Status:</em><br>
+   <%= @task.completed_status %></h2>
+<h2><em>Completed at:</em><br>
+   <%= @task.completed_at %></h2>
+
+<h2><%= link_to 'home', root_path %><h2>
