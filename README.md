@@ -18,6 +18,7 @@ In this baseline, you'll create a new Rails application and get started with two
   - create a controller action for the task `index` page which contains an array of hard-coded tasks
   - create an ERB view to display the tasks from the controller action
 
+
 ## Wave 1
 This wave is where we introduce ActiveRecord to create a model. We use the model to persist our data.
 
@@ -27,6 +28,7 @@ This wave is where we introduce ActiveRecord to create a model. We use the model
     - create at least 2 `Task` model instances using the `rails console`
 1. update the controller's `index` action you created to retrieve and show `all` Task objects from the database
     - you may need to update the view as well to use the model fields rather than the hard-coded data
+
 
 
 ## Wave 2
@@ -42,6 +44,7 @@ In this wave, we will expand the actions we support and introduce forms for user
       - this will give the user a new page with a **form** with the appropriate task fields
       - the site should take the user back to the task list after the new task is added
 
+
 ## Wave 3
 In this wave we will extend the interactivity with users, allowing them to edit existing tasks.
 
@@ -53,6 +56,7 @@ In this wave we will extend the interactivity with users, allowing them to edit 
 1. **Optional**
   - DRY up your code by reusing the view code from the `new` functionality
     - Hint: Rendering _partials_ in Rails
+
 
 ## Wave 4
 In this wave, we will add the ability to delete tasks. We will also add the ability for a user to mark a task complete.
