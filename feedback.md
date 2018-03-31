@@ -12,4 +12,5 @@ Successfully handles: Edit, Update |
 Successfully handles: Destroy, Task Complete | 
 Routes follow RESTful conventions | 
 Uses named routes (like `_path`) | 
+Uses partial views to DRY the new and edit forms | 
 **Overall** | 
