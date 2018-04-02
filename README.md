@@ -70,3 +70,10 @@ In this wave, we will add the ability to delete tasks. We will also add the abil
 The focus of this project is to familiarize yourself with rails. Design of this application is optional and secondary to learning goals this project. If you do find you have time to style the design of your application, you can use or own design or the wireframes below.
 
 ![Homepage Wireframe](/imgs/tasklist_homepage.jpg "Homepage Wireframe")
+
+## What We're Looking For
+
+Instructors will be looking for the content [here](feedback.md) when evaluating your project.  
+
+## Due Date
+This project is due Sunday the 25th
