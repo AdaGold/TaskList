@@ -8,6 +8,8 @@ Practice all aspects of Rails development.
 - Implement RESTful routes using Rails standards
 - Complete all CRUD actions in a Rails application
 
+**Project Due EOD Sun, Sept 23rd**
+
 ## Baseline
 In this baseline, you'll create a new Rails application and get started with two of the major components: route, controller and view.
 
@@ -64,9 +66,13 @@ In this wave, we will add the ability to delete tasks. We will also add the abil
 1. Mark a task complete
     - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete
     - Update the database with the task's completed date
+<!--
 
-
+-->
 ### Optional Design
 The focus of this project is to familiarize yourself with rails. Design of this application is optional and secondary to learning goals this project. If you do find you have time to style the design of your application, you can use or own design or the wireframes below.
 
 ![Homepage Wireframe](/imgs/tasklist_homepage.jpg "Homepage Wireframe")
+
+## What we are looking for
+Your instructor feedback template can be found [here](feedback.md)

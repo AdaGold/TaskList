@@ -12,4 +12,6 @@ Successfully handles: Edit, Update |
 Successfully handles: Destroy, Task Complete | 
 Routes follow RESTful conventions | 
 Uses named routes (like `_path`) | 
+**Setup** |
+Used Rails template - sample test is spec style |
 **Overall** | 
