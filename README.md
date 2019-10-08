@@ -80,7 +80,7 @@ In this wave, we will add the ability to delete tasks. We will also add the abil
     1. Delete the task from the database and redirect the user back to the list of remaining tasks
 1. Mark a task complete
     - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete
-    - Update the database with the task's completed date
+    - Update the database with the task's completed_at date
 
 ### Optional Design
 
