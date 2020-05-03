@@ -4,5 +4,12 @@ class TasksController < ApplicationController
   end
 
   def show
+    id = params[:id].to_i
+    @task = Task.find(id)
+
+    if @task.nil?
+      redirect_to tasks_path
+      return
+    end
   end
 end
