@@ -2,10 +2,11 @@
 <h2> Index </h2>
 
 <h2> List of Tasks</h2>
+<li><%= link_to "Add a task", new_task_path %></li>
 <% if @tasks.length > 0 %>
 <ul>
   <% @tasks.each do |task|%>
-    <li> <%= task[:name] %> <br> <%= task[:description] %></li>
+    <li> <%= task[:name] %> <br> <%= task.id %> <%= task[:description] %></li>
   <% end %>
 </ul>
 <% else %>
