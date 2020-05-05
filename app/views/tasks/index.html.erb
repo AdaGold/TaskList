@@ -10,8 +10,10 @@
       <% @tasks.each do |task|%>
         <li> <%= task.name %> <br> 
         <%= task.description %> <br> 
+        Completed at: <%= task.completed_at %> <br>
         <%= link_to "Edit task", edit_task_path(task) %> <br> 
         <%= link_to "Delete task", task_path(task), method: :delete, data: {confirm: "Are you sure you want to delete this task?"} %> <br></li>
+        <%= button_to "Mark complete", complete_path(task), method: :post, :class => "btn btn-outline-dark" %>
       <% end %>
     </ul>
     <% else %>

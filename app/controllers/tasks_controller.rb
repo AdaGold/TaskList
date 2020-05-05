@@ -61,6 +61,24 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    id = params[:id].to_i
+    @task = Task.find_by(id: params[:id])
+
+    # completion_date = params[:task][:completed_at]
+    # completion_date = Time.now
+    if @task.nil?
+      head :not_found
+      return
+    elsif @task.update(
+      # name: params[:task][:name],
+      # description: params[:task][:description],
+      completed_at: Time.now
+    )
+    end
+    redirect_to tasks_path
+  end
+
   def destroy
     id = params[:id]
     @task = Task.find_by(id: id)
