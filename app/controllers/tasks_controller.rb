@@ -1,10 +1,8 @@
 
-TASKS = [ "Do laundry", "Grocery Shopping", "Go to the gym"]
 
-
+#Controller actions are always methods
 class TasksController < ApplicationController
-  def index
-    @tasks = TASKS
+  def index # Index will list all
     @tasks = Task.all
   end
 end
