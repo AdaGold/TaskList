@@ -1,10 +1,7 @@
 <h1>Task list </h1>
 <ul>
   <% @tasks.each do |task|  %>
-  <li>
-    <li> <% task.name %>: <%=task.description %>, completed at: <%= task.completed_at %> </li>
+    <li> <%= task.name %>: <%=task.description %>, completed at: <%= task.completed_at %> </li>
   <% end %>
-</ul>
-<%else %>
-<p> There are no tasks</p>
-<%end %>
+  </ul>
+

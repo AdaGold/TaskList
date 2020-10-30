@@ -1,0 +1,12 @@
+<h1> Task details</h1>
+
+<h2>Task Name: <% @task.name %></h2>
+<p> Description: <%= @task.description %> </p>
+
+<%if @task.completed_at.blank?%>
+  <p> Taks is not completed</p>
+  <%else %>
+  <p> Completed: <%=@task.completed_at %></p>
+<%end %>
+
+
