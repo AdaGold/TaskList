@@ -18,21 +18,14 @@
   <h3>Tasks </h3>
   <ul>
     <% @tasks.each do |task|  %>
-      <li>
-
+      <ol>
       <h4><%= task[:name]%> </h4>
-      <h4><%=task[:completed_at]%></h4>
+<!--      <h6><%#=task[:completed_at]%></h6>-->
+        <%= link_to "Task Completed |", completed_task_path(task.id), method: :patch %>
         <%=link_to "Edit task |", edit_task_path(task.id) %>
         <%=link_to "Delete task", task_path(task.id), method: :delete, data: {confirm: "Are you sure?"}%>
-        <%= link_to "Task Completed", completed_task_path(task.id), method: :patch %>
-        <%#if task.completed_at %>
-<!--        <input type="checkbox" id="scales" name="scales"-->
-<!--               checked disabled>-->
-          <%#else %>
-<!--        <input type="checkbox" id="scales" name="scales"-->
-<!--               disabled>-->
-          <%#end %>
-      </li>
+
+      </ol>
         <% end %>
   </ul>
 
