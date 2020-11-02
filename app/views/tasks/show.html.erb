@@ -1,7 +1,12 @@
+<h3> Task details</h3>
 <main>
-
-  <p><%= @task.name %></p>
-  <p><%= @task.description %> </p>
+<ul>
+  <li>
+    Task name: <%= @task.name %>
+  </li>
+ <li>
+   Description: <%= @task.description %>
+ </li>
 
   <%if @task.completed_at.blank?%>
     <p> Task is not completed</p>
@@ -9,6 +14,7 @@
     <p> Completed: <%=@task.completed_at %></p>
   <%end %>
 
+</ul>
 
   <p> <%= link_to "Return to task list", tasks_path %> </p>
 </main>

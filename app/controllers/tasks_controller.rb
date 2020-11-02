@@ -87,7 +87,7 @@ class TasksController < ApplicationController
       return
     elsif
     @task.update(completed_at: Time.now.to_s)
-      redirect_to tasks_path
+      redirect_to root_path
       return
     else
       @task.update(completed_at: nil)

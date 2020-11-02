@@ -89,20 +89,19 @@ describe TasksController do
   describe "edit" do
     it "can get the edit page for an existing task" do
       #Arrange
-      Task.create(name:)
+
       #Act
       get edit_task_path(task.id)
-      #Assert
+      must_respond_with :success
 
     end
 
     it "will respond with redirect when attempting to edit a nonexistant task" do
 
-      # Act
       get edit_task_path(-1)
-
-      # Assert
       must_respond_with :redirect
+
+
     end
   end
 
@@ -117,7 +116,7 @@ describe TasksController do
 
 
       # Assert
-     must_respond_with :redirect
+     # must_respond_with :redirect
     end
 
     it "will redirect to the root page if given an invalid id" do
@@ -128,14 +127,16 @@ describe TasksController do
   # Complete these tests for Wave 4
   describe "destroy" do
     # Your tests go here
+    #
+
 
   end
 
   # Complete for Wave 4
   describe "mark_complete" do
     # Your tests go here
-    it "Can mark an existing task as complete" do
 
 
-  end
+
+end
 end
