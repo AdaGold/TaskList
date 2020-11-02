@@ -99,7 +99,6 @@ describe TasksController do
     # Note:  If there was a way to fail to save the changes to a task, that would be a great
     #        thing to test.
     it "can update an existing task" do
-      skip
       # Your code here
       Task.create(name: "Meal Prep", description: "Cook meals for the week", completed_at: nil)
 
@@ -114,12 +113,12 @@ describe TasksController do
 
       # Act-Assert
       expect {
-        #patch tasks_path(task.id), params: task_hash
-      }.must_differ "Task.count", 0
+        patch task_path(task.id), params: task_hash
+      }.wont_change "Task.count"
 
       new_task = Task.find_by(name: task_hash[:task][:name])
       expect(new_task.description).must_equal task_hash[:task][:description]
-      expect(new_task.completed_at).must_equal task_hash[:task][:completed_at]
+      assert_nil(new_task.completed_at)
 
       must_respond_with :redirect
       must_redirect_to task_path(new_task.id)

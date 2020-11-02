@@ -2,9 +2,14 @@
 <ul>
   <%@tasks.each do |task|%>
     <li>
+      <div>
       <%= link_to task.name, task_path(task) %>
       <%= button_to "Mark complete", task_complete_path(task), method: :patch%>
+      </div>
 
+      <div>
+      <%= button_to "Delete Task", task_path(task), method: :delete, data: {confirm: "Are you sure?"}%>
+      </div>
     </li>
   <%end%>
 </ul>
