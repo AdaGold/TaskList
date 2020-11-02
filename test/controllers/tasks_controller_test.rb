@@ -136,11 +136,50 @@ describe TasksController do
   # Complete these tests for Wave 4
   describe "destroy" do
     # Your tests go here
-    
+    it "will delete a task" do
+      # Arrange
+      Task.create(name: "Fake task", description: "Fake description", completed_at: nil)
+      task = Task.first
+
+      # Act-Assert
+      expect {
+        delete task_path(task.id)
+      }.must_differ "Task.count", -1
+
+      must_respond_with :redirect
+      must_redirect_to tasks_path
+    end
+
+
   end
   
   # Complete for Wave 4
   describe "toggle_complete" do
     # Your tests go here
+    it 'will mark a task as complete' do
+      # Arrange
+      Task.create(name: "Watch The Mandalorian", description: "Watch recap from last season first", completed_at: nil)
+      task_hash = {
+          task: {
+              name: "new task",
+              description: "new task description",
+              completed_at: Time.now.to_s,
+          },
+      }
+      task = Task.first
+
+      # Act-Assert
+      expect {
+        patch task_path(task.id), params: task_hash
+      }.must_differ "Task.count", 0
+
+      new_task = Task.find_by(name: task_hash[:task][:name])
+      expect(new_task.description).must_equal task_hash[:task][:description]
+      expect(new_task.completed_at).must_equal task_hash[:task][:completed_at]
+
+      must_respond_with :redirect
+      must_redirect_to task_path(new_task.id)
+    end
   end
 end
+
