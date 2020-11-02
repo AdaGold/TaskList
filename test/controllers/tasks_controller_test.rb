@@ -88,10 +88,11 @@ describe TasksController do
   # Unskip and complete these tests for Wave 3
   describe "edit" do
     it "can get the edit page for an existing task" do
+      #Arrange
+      Task.create(name:)
       #Act
       get edit_task_path(task.id)
       #Assert
-      must_respond_with :success
 
     end
 
@@ -111,6 +112,12 @@ describe TasksController do
     #        thing to test.
     it "can update an existing task" do
       # Your code here
+      #
+      # Act
+
+
+      # Assert
+     must_respond_with :redirect
     end
 
     it "will redirect to the root page if given an invalid id" do
@@ -125,7 +132,10 @@ describe TasksController do
   end
 
   # Complete for Wave 4
-  describe "toggle_complete" do
+  describe "mark_complete" do
     # Your tests go here
+    it "Can mark an existing task as complete" do
+
+
   end
 end
