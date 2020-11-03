@@ -107,20 +107,29 @@ describe TasksController do
 
   # Uncomment and complete these tests for Wave 3
   describe "update" do
-    # Note:  If there was a way to fail to save the changes to a task, that would be a great
-    #        thing to test.
+
     it "can update an existing task" do
-      # Your code here
-      #
-      # Act
 
+      old_task= task
+      task_to_update_hash = {
+          task: {
+            name: 'task to update',
+            description: 'this will be updated',
+            completed_at: nil
+        }
+      }
 
-      # Assert
-     # must_respond_with :redirect
+      expect {
+        patch task_path(old_task),params: task_to_update_hash
+      }.wont_change "Task.count"
     end
+
 
     it "will redirect to the root page if given an invalid id" do
       # Your code here
+      patch task_path(-10)
+
+      must_respond_with :redirect
     end
   end
 
@@ -154,5 +163,5 @@ describe TasksController do
 
 
 
-end
+  end
 end
