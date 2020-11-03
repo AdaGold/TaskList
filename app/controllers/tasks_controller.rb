@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(
+    @task = Task.new(  #Is this working and saving into the database?
         name: params[:task][:name],
         description: params[:task][:description],
         completed_at: params[:task][:completed_at]
@@ -82,7 +82,7 @@ class TasksController < ApplicationController
     task_id = params[:id]
     @task =Task.find_by(id:task_id)
 
-    if @task.nil?
+    if @task.completed_at.nil?
       head :not_found
       return
     elsif

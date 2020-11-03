@@ -127,9 +127,25 @@ describe TasksController do
   # Complete these tests for Wave 4
   describe "destroy" do
     # Your tests go here
-    #
+    it 'should delete an existing task and redirect to index page' do
+      #Arrange
+      task_to_delete = Task.create(
+          name: 'task to delete',
+          description: 'this will be deleted',
+          completed_at: nil)
+
+      expect {
+        delete task_path(task_to_delete)
+      }.must_differ "Task.count", -1
+    end
 
 
+    it 'redirects if given invalid id' do
+
+      delete task_path(-10)
+
+      must_respond_with :redirect
+    end
   end
 
   # Complete for Wave 4
