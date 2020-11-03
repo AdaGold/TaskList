@@ -152,7 +152,6 @@ describe TasksController do
     it 'redirects if given invalid id' do
 
       delete task_path(-10)
-
       must_respond_with :redirect
     end
   end
@@ -160,8 +159,22 @@ describe TasksController do
   # Complete for Wave 4
   describe "mark_complete" do
     # Your tests go here
+    it "marks a task as complete" do
 
+      task_to_complete = Task.create(
+          name: 'task to complete',
+          description: 'this was finished',
+          completed_at: 'Nov, 3, 2020')
 
+        patch completed_task_path(task_to_complete)
+
+      expect(task_to_complete.completed_at).wont_be_nil
+
+    end
+
+    it "will redirect to the root page if given an invalid id for task" do
+
+    end
 
   end
 end
