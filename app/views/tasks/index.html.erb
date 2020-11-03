@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tasklist</title>
+</head>
+<body>
+<header>
+  <h1>Tasklist</h1>
+  <nav>
+    <ul>
+      <li><%= link_to "All tasks", root_path, method: :get %></li>
+      <li><%= link_to "Add new task", new_task_path, method: :get %></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <h3>Tasks </h3>
+  <ul>
+    <% @tasks.each do |task|  %>
+      <ol>
+      <h4><%= task[:name]%> </h4>
+        <%= link_to "Task Completed |", completed_task_path(task.id), method: :patch %>
+        <%=link_to "Edit task |", edit_task_path(task.id) %>
+        <%=link_to "Delete task", task_path(task.id), method: :delete, data: {confirm: "Are you sure?"}%>
+
+      </ol>
+        <% end %>
+  </ul>
+
+</main>

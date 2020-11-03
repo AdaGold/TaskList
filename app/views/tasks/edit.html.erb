@@ -1,0 +1,25 @@
+<%# in app/views/edit.html.erb %>
+<header>
+  <h3>Edit Task: <%=@task.name %></h3>
+</header>
+
+<main>
+
+  <%= form_with model: @task, class: 'create-task' do |f| %>
+    <p>Please provide the following information to save your task to our database:</p>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%=f.label :completed_at %>
+    <%=f.text_field :completed_at %>
+
+    <%= f.submit "Update Task", class: "task-button" %>
+  <% end %>
+
+</main>
+
+<p> <%= link_to "Return to task list", tasks_path %> </p>
